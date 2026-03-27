@@ -4,14 +4,14 @@ import redis
 
 app = FastAPI()
 
-# APNI URL YAHAN DAAL (Dhyan rakhna rediss:// se start ho)
+
 UPSTASH_URL = "rediss://default:PUT_Your_Passrowrd_here@prime-snake-66782.upstash.io:6379"
 
 print("[*] Redis se connect karne ki koshish kar rahe hain...")
 try:
-    # decode_responses=True matlab raw bytes nahi, normal string aayegi
+    
     r = redis.Redis.from_url(UPSTASH_URL, decode_responses=True)
-    r.ping() # Yeh database ko ek 'Hi' bhejta hai check karne ke liye
+    r.ping() 
     print("[+] SUCCESS: Upstash Redis ekdum mast connect ho gaya!")
 except Exception as e:
     print(f"[-] ERROR: Redis connect nahi hua! Issue: {e}")
