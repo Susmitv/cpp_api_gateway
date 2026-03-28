@@ -1,12 +1,12 @@
 from django.shortcuts import render
 import redis
 
-# BHAI YAHAN APNA ASLI UPSTASH URL DAALNA (Jisme password ho)
+
 UPSTASH_URL = "rediss://default:Put_Your_Password_here@prime-snake-66782.upstash.io:6379"
 r = redis.Redis.from_url(UPSTASH_URL, decode_responses=True)
 
 def live_dashboard(request):
-    # Redis se saare IP addresses aur unki hit count nikal rahe hain
+    
     all_keys = r.keys('*')
     ip_data = []
 
